@@ -35,3 +35,7 @@ git commit –-amend
 git config user.name “firstname lastname”
 git config user.email xxx@yy.com
 8、git commit libavformat/movenc.c -s [-s 主要是指明这个代码是你改的]
+
+9、删除远程分支
+git branch -r -d origin/branch_name 删除本地的远程分支
+git push origin :branch_name 删除远程分支
