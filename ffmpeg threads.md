@@ -1,4 +1,12 @@
 http://ffmpeg.org/fate.html
+#方法1：只求音视频的 streams bitrate
+ffprobe -v error -show_entries stream=codec_name,bit_rate  -of default=noprint_wrappers=1 http://zhihu-video-output-1251625956.cos.ap-beijing.myqcloud.com//nb_h264/HD/v3_391af862-fcb4-11e9-b4e2-a2f2e9dd2bda.mp4
+
+#方法2 只求封装格式的format bitrate
+ffprobe  -v error -show_entries format=bit_rate -of default=noprint_wrappers=1 http://zhihu-video-output-1251625956.cos.ap-beijing.myqcloud.com//nb_h264/HD/v3_391af862-fcb4-11e9-b4e2-a2f2e9dd2bda.mp4
+
+#方法三：求流和封装的信息 streams & format bitrate
+ffprobe  -v error -show_entries stream=codec_name,bit_rate -show_entries format=filename,bit_rate  -of default=noprint_wrappers=1 http://zhihu-video-output-1251625956.cos.ap-beijing.myqcloud.com//nb_h264/HD/v3_391af862-fcb4-11e9-b4e2-a2f2e9dd2bda.mp4
 ```
 transcode_step()
 ----choose_output()
